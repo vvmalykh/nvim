@@ -1,5 +1,5 @@
 FROM golang:latest
 
-RUN go install golang.org/x/tools/gopls@latest
+RUN go install golang.org/x/tools/gopls@latest && cp /go/bin/gopls /usr/local/bin/
 
-ENTRYPOINT ["tall", "-f", "/dev/null"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
